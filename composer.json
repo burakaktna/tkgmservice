@@ -1,0 +1,45 @@
+{
+    "name": "burakaktna/tkgmservice",
+    "description": "PHP TKGM API Service",
+    "keywords": [
+        "burakaktna",
+        "tkgmservice",
+        "tkgm",
+        "php"
+    ],
+    "homepage": "https://github.com/burakaktna/tkgmservice",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Muhammed Burak AKTUNA",
+            "email": "burak@kodmunity.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4",
+        "guzzlehttp/guzzle": "^7.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Burakaktna\\TKGMService\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Burakaktna\\TKGMService\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
