@@ -17,77 +17,69 @@ composer require burakaktna/tkgmservice
 
 ## Usage
 
-Print the list of provinces.
+### Print the list of provinces
 
 ```php
-<?php
 require_once 'vendor/autoload.php';
 
-use Burakaktna\TKGMService;
+use Burakaktna\TKGMService\TKGMService;
 
 $tkgmService = new TKGMService();
-$provinces   = $tkgmService->getProvinces()->submit();
+$provinces = $tkgmService->getProvinces();
 
 print_r($provinces);
-?>
 ```
 
-Print the list of districts
+### Print the list of districts
 
 ```php
-<?php
 require_once 'vendor/autoload.php';
 
-use Burakaktna\TKGMService;
+use Burakaktna\TKGMService\TKGMService;
 
 $tkgmService = new TKGMService();
-$districts   = $tkgmService->getDistricts(int $districtId)->submit();
+$districts = $tkgmService->getDistricts(int $provinceId);
 
 print_r($districts);
-?>
 ```
 
-Print the list of neighborhoods
+### Print the list of neighborhoods
 
 ```php
-<?php
 require_once 'vendor/autoload.php';
 
-use Burakaktna\TKGMService;
-
-$tkgmService   = new TKGMService();
-$neighborhoods = $tkgmService->getNeighborhoods(int $districtId)->submit();
-
-print_r($neighborhoods);
-?>
-```
-
-Parcel inquiry
-
-```php
-<?php
-require_once 'vendor/autoload.php';
-
-use Burakaktna\TKGMService;
+use Burakaktna\TKGMService\TKGMService;
 
 $tkgmService = new TKGMService();
-$parcel      = $tkgmService->parcelInquiry(int $neighborhoodId, int $bobId, int $parcelId)->submit();
+$neighborhoods = $tkgmService->getNeighborhoods(int $districtId);
 
 print_r($neighborhoods);
-?>
 ```
 
-Also you can see more examples in examples folder.
+### Parcel inquiry
+
+```php
+require_once 'vendor/autoload.php';
+
+use Burakaktna\TKGMService\TKGMService;
+
+$tkgmService = new TKGMService();
+$parcel = $tkgmService->parcelInquiry(int $neighborhoodId, int $bobId, int $parcelId);
+
+print_r($parcel);
+```
+
+Also, you can see more examples in the examples folder.
 
 ### Testing
 
-``` bash
+```bash
 composer test
 ```
 
 ### Changelog
 
-Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
+Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
 
 ## Contributing
 
@@ -95,7 +87,7 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ### Security
 
-If you discover any security related issues, please email burak.aktna@gmail.com instead of using the issue tracker.
+If you discover any security-related issues, please email burak.aktna@gmail.com instead of using the issue tracker.
 
 ## Credits
 
